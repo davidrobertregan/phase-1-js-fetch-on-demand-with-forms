@@ -11,7 +11,11 @@ const init = () => {
         fetch(source)
         .then(result => result.json())
         .then(data => { 
-                console.log(data)
+            const title = document.querySelector("#movieDetails h4");
+            const summary = document.querySelector("#movieDetails p");
+            
+            title.innerText = data.title;
+            summary.innerText = data.summary;
         })
     })
 }
